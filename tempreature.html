@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>temp Converter</title>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        .box{
+            width: 35%;
+            height: 100%;
+           margin: 150px 0px 0px 500px;
+           background-color: white;
+           box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;;
+        }
+        .boxchild{
+            display: flex;
+            flex-direction: row;
+        }
+        .inp{
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="heading">
+            <h1>temperature Converter</h1>
+        </div>
+        <div class="boxchild">
+            <div class="inp">
+                <h5>Degree</h5>
+                <input type="number"  id="degree">
+            </div>
+            <div class="inp">
+                <h5>type</h5>
+                <input type="text"  id="input">
+            </div>
+        </div>
+            <div>
+                <h5>Result</h5>
+                <p id="demo"></p>
+            </div>
+            <button style="text-align: center; width: 100%; background-color: rgb(83, 116, 224); padding: 15px 0px 15px 0px; color: white; border-radius: 15px;" onclick="convert()">Convert</button>
+    </div>
+    <script>
+        let degre = document.getElementById('degree');
+        let name1 = document.getElementById('input');
+        function convert(){
+            if(name1.value=="Celsius"){
+                let value =(degre.value-32)*5/9;
+               document.getElementById('demo').innerHTML = value + " "+"Celsius";
+            }
+            else{
+                let value = (degre.value*9)/5+32;
+               document.getElementById('demo').innerHTML = value + "" +"Fahrenheit";
+               
+            }
+        }
+    </script>
+</body>
+
+</html>
